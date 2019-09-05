@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}问题与背景}{3}
+\contentsline {subsection}{\numberline {1.1}背景介绍}{3}
+\contentsline {subsection}{\numberline {1.2}问题重述}{4}
+\contentsline {subsubsection}{\numberline {1.2.1}任务一}{4}
+\contentsline {subsubsection}{\numberline {1.2.2}任务二}{4}
+\contentsline {subsubsection}{\numberline {1.2.3}任务三}{4}
+\contentsline {section}{\numberline {2}符号含义与名词解释}{4}
+\contentsline {subsection}{\numberline {2.1}符号含义}{4}
+\contentsline {section}{\numberline {3}任务一：提取航路信息}{4}
+\contentsline {subsection}{\numberline {3.1}问题分析}{4}
+\contentsline {subsection}{\numberline {3.2}模型建立及数据处理}{5}
+\contentsline {section}{\numberline {4}任务二：轨迹相似度度量问题}{8}
+\contentsline {subsection}{\numberline {4.1}归一化处理}{8}
+\contentsline {subsection}{\numberline {4.2}整理数据重新取点}{8}
+\contentsline {subsection}{\numberline {4.3}定义轨迹相似度度量方法}{9}
+\contentsline {subsection}{\numberline {4.4}铅垂面的异常识别}{9}

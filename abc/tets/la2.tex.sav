@@ -1,0 +1,1399 @@
+\documentclass[GBK]{ctexart}
+\usepackage{titlesec}
+\usepackage{ulem}
+\usepackage{appendix}
+\usepackage{mathbbold}
+\usepackage{varwidth}
+\usepackage{ulem}
+\usepackage{caption}
+\DeclareCaptionLabelSeparator{twospace}{\ ~}   %%这三条语句即可
+\captionsetup{labelsep=twospace}
+%\usepackage{autobreak}
+%\usepackage{caption}
+%\usepackage{hyperref}
+\usepackage{subfigure}
+\usepackage[dvipdfmx]{graphicx}
+%\usepackage{bmpsize}
+%\usepackage{CJK,CJKnumb}
+%\usepackage{indentfirst}        %首行缩进宏包
+%\usepackage{latexsym,bm}        % 处理数学公式中和黑斜体的宏包
+\usepackage{amsmath,amssymb}    % AMSLaTeX宏包 用来排出更加漂亮的公式
+\usepackage{graphicx}
+\usepackage{cases}
+\usepackage{pifont}
+\usepackage{txfonts}
+\usepackage{cite}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{url}
+\pagestyle{plain}
+%\newCJKfontfamily\sectioncf{\kaishu }
+%\titleformat*{\section}{\LARGE\sectioncf}
+\usepackage{float}
+\usepackage{epstopdf}
+\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\lhead{
+%\includegraphics[scale=0.5]{logo.png}
+%}  %在此处插入logo.pdf图片 图片靠左
+%%\chead{} % 页眉中间位置内容
+%\rhead{
+%\includegraphics[scale=0.1]{logo1.png}
+%} 页眉右边位置内容，并加粗
+%\lfoot{aa}  %页脚
+%\cfoot{bb}
+%\rfoot{cc}
+\title{东三省}
+\date{}
+\author{}
+\pagenumbering{arabic}
+\usepackage[a4paper,left=2.5cm,right=2.5cm,top=3.7cm,bottom=2.5cm]{geometry}
+\usepackage{setspace}%使用间距宏包
+\usepackage{booktabs}
+\usepackage{colortbl}
+%\usepackage{bigstruct}
+\usepackage{multienum}
+\bibliographystyle{unsrt}
+\begin{document}
+\titleformat*{\section}{\songti\zihao{4}}
+\titleformat*{\subsection}{\songti\zihao{-4}}
+\titleformat*{\subsubsection}{\songti\zihao{-4}}
+\begin{spacing}{1.5}%%行间距变为double-space
+\newcommand{\song}{\CJKfamily{song}}
+%\maketitle
+\zihao{-4}
+%\begin{abstract}
+%\zihao{-4}
+%该部分内容是放置摘要信息的。该部分内容是放置摘要信息的。该部分内容是放置摘要信息的。该部分内容是放置摘要信息的。该部分内容是放置摘要信息的。
+
+%\end{abstract}
+
+%关键字：
+%%\thispagestyle{empty}
+%\setcounter{page}{3}
+%\newpage
+%\newcommand{\song}{\CJKfamily{song}}
+\tableofcontents
+\setcounter{page}{4}
+%\thispagestyle{empty} % 当前页不显示页码
+\newpage
+\setcounter{page}{3}
+
+\section{问题与背景}
+\subsection{背景介绍}
+
+
+\subsection{问题重述}
+本篇论文将就微波问题和骨干网问题进行分析、计算、设计模型、评估优化。\par
+
+已知，现有一个由32个相控天线单元构成的相控阵列，每个单元其内部移相器配置有且仅有四种相位（0°，90°，180°，270°）。我们依据题目给出的对于不同水平角、俯仰角测量点处测得的功率和相位数据，完成微波问题。
+\subsubsection{微波问题}
+微波问题1：首先，需要在位置为水平角10°，俯仰角10°处的合成功率尽可能的低，理想情况是测得的功率接近0dBm，以避免对该站点的干扰；同时需要在水平角10°，俯仰角5°处的站点合成的功率尽可能接近35dBm；另外需要满足旁瓣电平尽可能低。上述要求通过对已给的32个天线单元的开启数量以及各自移相器所改变的相位来实现波束配置。
+%\subsubsection{微波问题2}
+
+微波问题2：首先，在水平角±30°，俯仰角±15°的区域实现波束的覆盖，覆盖区域的平均辐射功率为35dBm；其次波束覆盖的“凹坑”尽可能小，让该区域覆盖的尽可能平缓；同时应该使用尽可能少的波束来实现覆盖。上述要求通过对已给的32 个天线单元的开启个数及各自移相器所改变的相位来实现对波束的管理。
+\\ \hspace*{\fill} \\
+\quad 当今社会，网络接入量的与日剧增，互联网接入技术的高速发展，用户信息需求量爆炸指数式增长，我们可以预想到之后的未来十年对于城际以及远距离通信中的关键骨干网的建设至关重要，亟需运营商优质规划部署，以满足社会的潜在动态需求。本次我们将针对广东全省内部各个主要行政城市的已有的骨干网进行改造升级，以满足电信市场未来十年（截止2028 年）的各类人群对于信息量的需求问题，保障好“建立一个万物互联的世界”的硬件基础设施建设。
+\subsubsection{骨干网问题}
+骨干网问题1：首先要对不同年龄不同收入阶层人群的对于信息量的不同需求的进行潜在预判，从而以此为依据来设计，以广东省省会广州市作为数据中心，选择不同的通信调制格式升级改造从广州到其余各主要行政城市的骨干网络。其次，对于部署方案的评价也是很重要的，好的部署设计要经得起各种角度情况的考验，才是可以提供给电信从业人员的优秀方案；所以应该构建一个有效科学合理优质的部署价值函数，用这个价值函数找到网络价值最大化的部署方案。
+
+%\subsubsection{骨干网问题2}
+骨干网问题2：为了实现运营商利益最大化，考虑到不同骨干网覆盖的用户人群的接入价值有高有低，而且收入、地理位置、年龄段的接入成本也是不一样的。比如有一些有项目投资的大型企事业单位，他们觉得成本高的接入未必性价比低，对于他们来说这个成本的优质服务是基本与他们他们的预期花销接近，他们有更大的信息需求量的同时也有可以负担得起成本的能力。所以我们应该把不同用户人群的骨干网络接入价值加入到部署方案的考虑中去，选择性接入网络价值大的人群，重新构建并找到最优部署方案。
+
+
+\section{符号含义与名词解释}
+\subsection{符号含义}
+\begin{table}[H]
+  \centering
+  \caption{符号说明}
+    \begin{tabular}{|r|l|}
+    \toprule[2pt]
+    符号    & \multicolumn{1}{l|}{含义} \\
+    \midrule[1pt]
+    \rowcolor[rgb]{ .816,  .808,  .808} AZ    & 水平角测量点，范围[-180°，180°]，步进5 ° \\
+
+    EL    & 俯仰角测量点，范围[-90°，90°]，步进5° \\
+
+    \rowcolor[rgb]{ .816,  .808,  .808} LogMag & \ multicolumn{1}{p{37.5em}}{[0°,90°,180°,270°] 度移相器配置时测量的功率，单位dBm} \\%，与功率换算关系${10^{\frac{{LogMag}}{{20}}}}$}
+
+    Phase & [0°，90°，180°，270°]度移相配置时，测得的相位，单位° \\
+
+    \rowcolor[rgb]{ .816,  .808,  .808} power & 合成功率，单位mW，与LogMag的换算关系为$20{\log _{10}}\left| {power} \right|$\\
+
+     $\omega$   & 信号的频率 \\
+
+    \rowcolor[rgb]{ .816,  .808,  .808} y     & 波源（阵元）振动的位移 \\
+     $\theta $ & 波源（阵元）振动的初相位 \\
+    \rowcolor[rgb]{ .816,  .808,  .808}$\varphi $     & 波传播的初相位 \\
+    A & 信号的振动幅度（振幅） \\
+    \rowcolor[rgb]{ .816,  .808,  .808}m& 第m个相控阵天线单元\\
+    i&水平角测量点，范围[-180°，180°]，步进5°情况下，第i个水平角度观测点\\
+     \rowcolor[rgb]{ .816,  .808,  .808}j&俯仰角测量点，范围[-90°，90°]，步进5°情况下，第j个俯仰角度观测点\\
+    ${\bar E}$     & 观测功率值的均值 \\
+    \rowcolor[rgb]{ .816,  .808,  .808}L     & 微波问题1均方差函数 \\
+    H     & 微波问题1合成功率函数 \\
+    \rowcolor[rgb]{ .816,  .808,  .808}h     & 微波问题1约束条件函数 \\
+    P    & 微波问题1目标函数 \\
+   \rowcolor[rgb]{ .816,  .808,  .808}${Z_{m}}$    & 波束配置矢量 \\
+    ${\left. {{f_{(1)}}} \right|_{(i,j)}}$ & 每一个观测值与期望值35dbm的距离的平方 \\
+    \rowcolor[rgb]{ .816,  .808,  .808}${\left. {{f_{(2)}}} \right|_{(i,j)}}$& 每一个观测值与附近观测值的均值距离的平方 \\
+    ${n_{close}}$       & 32个单元中关闭的单元数 \\
+    \rowcolor[rgb]{ .816,  .808,  .808}${N_{close}}$      & 32个单元中关闭的单元数函数 \\
+    F     & 微波问题2的目标函数 \\
+    \rowcolor[rgb]{ .816,  .808,  .808}${P_m}$ & 遗传算法中的变异概率 \\
+    ${R^2}$ & 可决系数 \\
+    \rowcolor[rgb]{ .816,  .808,  .808}${x_{pq}}$ & 第p个样本的第q个指标的数值 \\
+    ${Y_{pq}}$ & 熵权法指标标准化处理结果 \\
+    \rowcolor[rgb]{ .816,  .808,  .808}${P_{pq}}$ & 第q项指标下第p个样本值占该指标的比重 \\
+     ${E_q}$ & 第q项指标的熵值 \\
+    \rowcolor[rgb]{ .816,  .808,  .808}${d_q}$ & 第q项指标信息熵的冗余度（差异） \\
+    ${W_q}$ & 各项指标的权重 \\
+    \rowcolor[rgb]{ .816,  .808,  .808}${S_p}$ & 各样本的综合得分 \\
+    ${\rm{w(u, v)}}$  & 最小生成树算法中边的权重 \\
+
+    \bottomrule[2pt]
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+\begin{table}[H]
+  \centering
+  \caption{符号说明续表}
+    \begin{tabular}{|r|l|}
+    \toprule[2pt]
+    符号    & \multicolumn{1}{l|}{含义} \\
+    \midrule[1pt]
+    \rowcolor[rgb]{ .816,  .808,  .808}c     & 弧的容量 \\
+    f     & 弧的流量 \\
+    \rowcolor[rgb]{ .816,  .808,  .808}G = (V, E) & 无向图 \\
+    V     & 点集 \\
+    \rowcolor[rgb]{ .816,  .808,  .808}E     & 边集 \\
+    $v_{s}$ & 源点 \\
+    \rowcolor[rgb]{ .816,  .808,  .808}$v_{t}$ & 汇点 \\
+   y& 不同调制格式的使用数目 \\
+   \rowcolor[rgb]{ .816,  .808,  .808}${\rm{cost(x)}}$& 价值函数\\
+   $\eta $& 折减系数 \\
+    \bottomrule[2pt]
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+\subsection{名词解释}
+\begin{itemize}
+  \item 移相器：用来改变单元之间信号的相位关系的一种装置。任何传输介质对在其中传导的波动都会引入相移，这是早期模拟移相器的原理。移相器在雷达、导弹姿态控制、加速器、通信、仪器仪表甚至于音乐等领域都有着广泛的应用。
+  \item 天线方向图（波瓣图）：天线方向图上，对于任一天线而言，在大多数情况下，其E 面或H 面的方向图一般呈花瓣状。
+  \item 主瓣：辐射能量最集中的方向，最大辐射方向所在的波瓣，也称为“主波束”；主瓣（波束）的宽度定义为辐射功率下降一半（3dB）时对应的夹角，俗称“半功率角”。
+  \item 旁瓣：除了主瓣，天线在其他方向也有辐射，一般比主瓣功率低。对于主瓣以外的旁瓣而言，因为它的大小表示有部分能量分散辐射到这些方向上去了，所以工程实际中如何尽可能的降低旁瓣的功率也是一个人们不断研究的技术问题。
+  \item 零点：主瓣和旁瓣之间有许多零陷，是天线的零点；该角度方向没有能量辐射。
+  \item 凹坑：功率最大值与最小值的偏差，“凹坑”内的接收机信号较差。
+
+%  \item 
+%  \item 
+%  \item 
+%  \item 
+\end{itemize}
+
+\section{微波问题}
+\subsection{微波问题1}
+\subsubsection{模型建立与问题分析}
+首先，相控阵对于信息的传播传递是如何实现的呢？参考文献\cite{wang2007}和\cite{li2008}, 我们引入一个简单的概念情景。由于一切信息都是以电磁波形式传递的，在今天的社会我们既可以使用传统的光纤实体来实现波的传播，我们也可以通过各式各样的天线来实现波的传播。对于波，一种传播中的振动，是可以用波函数或称波动方程来描述波沿波的传播方向的解析表达式。当波源在均匀的、无吸收的介质中作简谐振动时形成的波即为简谐波。简谐波是我们研究各种波传播的重要理论基础。虽然简谐波是一种理想化的波，因为任何介质都会有吸收，实际中的波往往是很复杂的；但是，任何复杂的波都是若干个有自己独特振幅、频率的简谐波叠加而成的。所以对于简谐波的讨论理解是非常有必要的。
+
+那么，两列波或多列波在介质中同时传播相遇会遵循什么样的规律呢？我们类比生活中常见到的几个振动引起的多个水波纹的传输情况，可以发现水波叠加区域会发生较为强烈的振动。当几列波在介质中传播相遇，在相遇位置，介质的振动是这几列波在该点振动的合成，这就是“波的叠加原理”。实际上，在波的重叠区域内，介质中出现某些地方的振动始终明显加强，而在另一些地方的振动始终明显减弱或完全不动，这种现象称为“波的干涉”。当波的频率相同，振动方向一致，波源之间有相位差，此时的波之间会满足 “相干条件”。设有两个相干波源位于${S_1}$和${S_2}$ 处，他们振动的表达式为
+\begin{equation} \label{eq1}
+  \begin{array}{l}
+  {y_{10}} = {A_1}\cos \left( {\omega t + {\theta _1}} \right)\\
+  {y_{20}}=A_{2} \cos \left(\omega t+\theta_{2}\right)
+  \end{array}
+\end{equation}
+
+%% \begin{equation}\label{equ1}
+%%   %\begin{array}{l}
+%%    \\
+%%   y_{20}=A_{2} \cos \left(\omega t+\varphi_{2}\right)
+%%   \end{array}
+%% \end{equation}
+%\begin{equation}%{l}
+%{y_{10}} = {A_1}\cos \left( {\omega t + {\varphi _1}} \right)
+%\end{equation}
+%$$y_{10}=A_{1} \cos \left(\omega t+\varphi_{1}\right)$$
+%$$y_{20}=A_{2} \cos \left(\omega t+\varphi_{2}\right)$$
+设两波经过相同介质（理想介质无吸收）在空间中P点相遇，两阵元${S_1}$和${S_2}$到P点的距离分别为${r_1}$ 和${r_2}$，则P点同时参与的两个同方向，同频率的分振动分别为
+\begin{equation} \label{eq2}
+  \begin{array}{l}
+    {y_{1}} = {A_1}\cos \left( {\omega t + {\theta  _1} - \frac{{2\pi {r_1}}}{\lambda }} \right)= {A_1}\cos \left( {\omega t + {\varphi _1}} \right)\\
+    {y_{2}} = {A_2}\cos \left( {\omega t + {\theta _2} - \frac{{2\pi {r_2}}}{\lambda }} \right) = {A_2}\cos \left( {\omega t + {\varphi _2}} \right)
+  \end{array}
+\end{equation}
+
+利用简谐振动的合成可知，P点的振动
+\begin{equation}\label{eq3}
+  y = {y_1} + {y_2} = A\cos (\omega t + \varphi )
+\end{equation}
+
+其中合振动的初相$\varphi $满足
+\begin{equation}\label{eq3}
+  \tan \varphi  = \frac{{{A_1}\sin \left( {{\theta _1} - \frac{{2\pi {r_1}}}{\lambda }} \right) + {A_2}\sin \left( {{\theta _2} - \frac{{2\pi {r_2}}}{\lambda }} \right)}}{{{A_1}\cos \left( {{\theta _1} - \frac{{2\pi {r_1}}}{\lambda }} \right) + {A_2}\cos \left( {{\theta _2} - \frac{{2\pi {r_2}}}{\lambda }} \right)}} = \frac{{{A_1}{{\sin }_1}{\varphi _1} + {A_2}\sin {\varphi _2}}}{{{A_1}\cos {\varphi _1} + {A_2}\cos {\varphi _2}}}
+\end{equation}
+
+合振动的振幅为
+\begin{equation}\label{eq4}
+A = \sqrt {A_1^2 + A_2^2 + 2{A_1}{A_2}\cos ({\varphi _2} - {\varphi _1})}
+\end{equation}
+
+由式(\ref{eq4})可知，波的干涉加强，即合振幅最大（$A = {A_1} + {A_2}$）时，有$${\varphi _2} - {\varphi _1}=  \pm 2k\pi ,k = 0,1,2 \ldots  \ldots $$
+
+波的干涉加强，即合振幅最大（$A =\left| {{A_1}{\rm{ - }}{A_2}} \right|$）时，有$${\varphi _2} - {\varphi _1}=  \pm (2k+1)\pi ,k = 0,1,2 \ldots  \ldots $$
+
+当${\varphi _2} - {\varphi _1}$为其他值时，则有$\left| {{A_1}{\rm{ - }}{A_2}} \right| < A < {A_1} + {A_2}$
+通过上述的简单的两个简谐波的合成叠加我们可以更好的理解相控阵天线的工作原理，它是通过改变每个相控单元内部安装的移相器的设置，设置好振动的初相，每个单元之间有虽然未知但是是有限的确定的空间距离，最终在$73\times37$个位置上会有合成后的、进行过矢量叠加的振幅A 和相位$\varphi$。而振幅A是和信号的功率power之间具有$power  =  \frac{1}{2}\rho {A^2}$ （$\rho$ 为系数）的关系，功率在不同单位转换之间又有${\rm{LogMag  =  20lo}}{{\rm{g}}_{10}}\left| {power} \right|$的不同单位间的度量换算。经过上述考虑和计算，可以得到在$73\times37$个位置上可以测得的具体可测的数据指标，也就是题目给出的两套关于功率和相位的$73\times37\times32\times4$四维数据，它表示了：对于32个单独的相控阵单元，每个单元内部的移相器都会有设置的[0°， 90°， 180°，270°] 四种可能，也即总共$32\times4$ 种排列设置阵元的方案，这些方案在水平角测量点，范围[ -180°， 180°]，步进5 度，俯仰角测量点，范围[ -90°， 90°]，步进5度的$73\times37$ 个位置上测得的功率LogMag 或者相位Phase。
+\subsubsection{模型求解}
+现在引入复数的概念，这样可以简化矢量叠加运算。设每个相控天线单元的振幅为${A_m}$，它的初相位为${\varphi _m}$，所以它的极坐标形式就是${A_m}{e^{j{\varphi _m}}}$,复数形式就是${A_m}\cos {\varphi _m} + j{A_m}\sin {\varphi _m}$,两种形式之间变换关系为
+\begin{equation}\label{eq5}
+{A_m}{e^{j{\varphi _m}}} = {A_m}\cos {\varphi _m} + j{A_m}\sin {\varphi _m}
+\end{equation}
+
+把32个相控阵天线单元的功率、相位数据进行复数运算，可以得到最终观测点处信号的幅度为${A_{ij}}$，其中信号的实部为${A_{ij}}\cos {\varphi _{ij}}$，信号的虚部为${A_{ij}}\sin {\varphi _{ij}}$, 信号的相位为${\varphi _{ij}}$。
+\begin{equation}\label{eq6}
+\sum\limits_{m = 1}^{32} {{A_m}\cos {\varphi _m}}  = {A_{ij}}\cos {\varphi _{ij}}\
+\end{equation}
+\begin{equation}\label{eq7}
+\sum\limits_{m = 1}^{32} {{A_m}\sin {\varphi _m}}  = {A_{ij}}\sin {\varphi _{ij}}
+\end{equation}
+\begin{equation}\label{eq8}
+  \sqrt {{A_{ij}}\cos {\varphi _{ij}}^2 + {A_{ij}}\sin {\varphi _{ij}}^2}  = {A_{ij}}
+\end{equation}
+\begin{equation}\label{eq9}
+  {\varphi _{ij}} = {\arctan ^{ - 1}}\left( {\frac{{{A_{ij}}\sin {\varphi _{ij}}}}{{{A_{ij}}\cos {\varphi _{ij}}}}} \right) = {\arctan ^{ - 1}}\left( {\frac{{\sum\limits_{m = 1}^{32} {{A_m}\sin {\varphi _m}} }}{{\sum\limits_{m = 1}^{32} {{A_m}\cos {\varphi _m}} }}} \right)
+\end{equation}
+
+当每个观测点处在不同的天线单元开启个数和不同的移相器相位配置情况时，可以使用上述复数叠加公式，求出在$73\times37$ 个观测点处的相对应于每种配置方案合成的总功率和叠加的相位。方案数目为${{\rm{5}}^{{\rm{32}}}}$，每种方案均可通过上述复数叠加公式求出合成功率和合成相位。
+
+问题1是一个典型的波束配置问题，对于每个相控天线单元，实际上有5种可以选择的配置方案，即：关闭该阵元，开启阵元并设置其移相器移动相位[0°，90°，180°，270°] 。约定每个单元的波束配置：
+\begin{table}[H]
+  \centering
+  \caption{每个相控阵单元配置情况}
+    \begin{tabular}{r|l}
+    \toprule[2pt]
+    \multicolumn{1}{l|}{数字} & 相控阵单元配置情况 \\
+    \midrule
+    1     & 天线单元开启，移相器设置为0° \\
+    \midrule
+    2     & 天线单元开启，移相器设置为90° \\
+    \midrule
+    3     & 天线单元开启，移相器设置为180° \\
+    \midrule
+    4     & 天线单元开启，移相器设置为270° \\
+    \midrule
+    5     & 天线单元关闭 \\
+    \bottomrule[2pt]
+    \end{tabular}%
+  \label{tab:addlabe2}%
+\end{table}%
+
+分析题目给的$73\times37\times32\times4$的数据，可以发现第4号和第20号天线单元失效，因为这些数据里面所有观测点上的功率测量值要么是-inf，要么是零，说明配置第4和第20号天线单元与否对结果没有有效的影响。所以之后的运算中会剔除附件中异常的这两个天线的数据，即把这两个特别的天线单元直接设置为关闭。
+
+下面是对目标函数和约束函数的具体公式的说明介绍：
+
+计算统计区域内的观测值的均值${\bar E}$：
+\begin{equation}\label{b1}
+  \bar E{\rm{ = }}\sum\limits_{i = 1}^{\rm{n}} {\sum\limits_{j = 1}^m {E\left( {i,j} \right)} }
+\end{equation}
+
+计算均方差L：
+\begin{equation}\label{b2}
+  L = \sqrt {\frac{{\sum\limits_{i = 1}^{\rm{n}} {\sum\limits_{j = 1}^m {{{[\bar E - E\left( {i,j} \right)]}^2}} } }}{{nm - 1}}}
+\end{equation}
+
+保证（10°，5°）处合成功率为35dBm，其中$\varepsilon$表示一小量，如果太小，将使函数收敛得过慢，太大的话约束价值不大，故这个是可以依据实际情况调节的。
+\begin{equation}\label{b3}
+  H = {[E\left( {i,j} \right) - 35]^2} < \varepsilon
+\end{equation}
+
+约束条件函数h：
+\begin{equation}\label{b4}
+  h = \left\{ \begin{array}{l}
+E(10,10) \le 0\\
+{[E(10,10) - 0]^2}
+\end{array} \right.
+\end{equation}
+
+${n_{close}}$表示是计算机输出的值，这是自变量，把这个变量放到${N_{close}}$这个函数里:
+\begin{equation}\label{b5}
+  {N_{close}} = {n_{close}}
+\end{equation}
+\begin{equation}\label{b6}
+  P = \min \left\{ {\frac{{\frac{{HL}}{h}}}{{{N_{close}}}}} \right\} = \frac{{\min \left\{ {\frac{{HL}}{h}} \right\}}}{{\max \left\{ {{N_{close}}} \right\}}}
+\end{equation}
+
+利用结构优化设计的方法，先计算32个单元分别在观测点（10°，5°）处的5种天线单元配置情况下的不同幅值和对应的相位，然后选出每个单元5种情况下的幅值最大值组成一个集合。题目给了32个单元，再对该集合按大小顺序进行排列，然后以最大值对应的单元为新的第一单元，排列出新的单元顺序。先改变第一个单元的相位，使得合成幅值发生改变并使对应的目标函数满足${P_{{\rm{i}} + 1}} \le {P_i}$ ，则接受本次改变（i表示迭代的第i步），然后对下一个单元进行上述操作，直至得到第32 个单元的配置，得到最优解。排列出新的单元顺序如下表：
+
+\begin{table}[H]
+  \centering
+  \caption{新的单元顺序排列表（按幅值的最大值降序排列）}
+    \begin{tabular}{|r|r|r|r|r|r|r|r|r}
+    \toprule[3pt]
+    序号&7     & 3     & 18    & 23    & 5     & 31    & 16    & 25 \\
+    \midrule[1pt]
+    幅值最大值（dBm）&14.8574 & 14.7207 & 14.7197 & 14.4165 & 14.3761 & 14.2384 & 13.9619 & 13.9541 \\
+    \midrule[3pt]
+    序号&9     & 21    & 19    & 28    & 12    & 30    & 27    & 22 \\
+    \midrule[1pt]
+    幅值最大值（dBm）&13.9289 & 13.8917 & 13.4911 & 13.3941 & 12.8942 & 12.7611 & 12.721 & 12.7035 \\
+    \midrule[3pt]
+    序号&1     & 13    & 32    & 17    & 24    & 29    & 14    & 11 \\
+    \midrule[1pt]
+    幅值最大值（dBm）&12.063 & 11.7016 & 11.1595 & 10.701 & 9.8645 & 9.8091 & 9.7681 & 8.7291 \\
+    \midrule[3pt]
+    序号&15    & 2     & 10    & 8     & 26    & 6     & 4     & 20 \\
+    \midrule[1pt]
+    幅值最大值（dBm）&7.7572 & 7.7261 & 6.8312 & 6.7272 & 3.9931 & 3.0807 & 0     & 0 \\
+    \bottomrule[3pt]
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+
+\begin{table}[H]
+  \centering
+  \caption{32个天线单元Zm的配置情况}
+    \begin{tabular}{|r|r|r|r|r|r|r|r|}
+    \toprule[3pt]
+    \multicolumn{1}{|r|}{1} & \multicolumn{1}{r|}{2} & \multicolumn{1}{r|}{3} & \multicolumn{1}{r|}{4} & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{6} & \multicolumn{1}{r|}{7} & \multicolumn{1}{r|}{8} \\
+    \midrule[1pt]
+    关闭    & 0°    & 270°  &关闭   & 关闭    & 180°  & 270°  & 关闭 \\
+    \midrule[3pt]
+    \multicolumn{1}{|r|}{9} & \multicolumn{1}{r|}{10} & \multicolumn{1}{r|}{11} & \multicolumn{1}{r|}{12} & \multicolumn{1}{r|}{13} & \multicolumn{1}{r|}{14} & \multicolumn{1}{r|}{15} & \multicolumn{1}{r|}{16} \\
+    \midrule[1pt]
+    关闭    & 270°  & 关闭    & 270°  & 关闭    & 关闭    & 0°    & 关闭 \\
+    \midrule[3pt]
+    \multicolumn{1}{|r|}{17} & \multicolumn{1}{r|}{18} & \multicolumn{1}{r|}{19} & \multicolumn{1}{r|}{20} & \multicolumn{1}{r|}{21} & \multicolumn{1}{r|}{22} & \multicolumn{1}{r|}{23} & \multicolumn{1}{r|}{24} \\
+    \midrule[1pt]
+    270°  & 90°   & 90°   & 关闭  & 0°    & 90°   & 180°  & 关闭 \\
+    \midrule[3pt]
+    \multicolumn{1}{|r|}{25} & \multicolumn{1}{r|}{26} & \multicolumn{1}{r|}{27} & \multicolumn{1}{r|}{28} & \multicolumn{1}{r|}{29} & \multicolumn{1}{r|}{30} & \multicolumn{1}{r|}{31} & \multicolumn{1}{r|}{32} \\
+    \midrule[1pt]
+    关闭    & 0°    & 270°  & 关闭    & 关闭    & 关闭    & 0°    & 关闭 \\
+    \bottomrule[3pt]
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+
+
+该种波束可以实现在水平角AZ=10°，俯仰角EL=5°位置处的合成功率为38.0626dBm， 在位置AZ=10°，俯仰EL=10° 处的站点的合成功率4.7528dBm，接近于0，实现了对该站点尽可能得减小干扰，关闭了第1，4，5，8，9，11，13，14，16，20，24，25，28，29，30，32个天线单元发射信号的通道，并且由图\ref{f1} 可知，图上功率值较低即呈现蓝色的区域颜色比较深，说明此方案下的旁瓣电平比较低，结果比较理想的符合了题目要求。
+\begin{figure}[H]
+  \centering
+  %imshow(I, 'border', 'tight');
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=10cm,height=4.4cm]{f1}
+  \caption{微波问题1合成功率等高线图}\label{f1}
+\end{figure}
+\subsection{微波问题2}
+\subsubsection{问题分析}
+现在需要对32个波束设计新的管理方式来实现新的要求：1.用尽可能少的波束，也就是尽可能多的关闭天线单元；2. 在水平角±30°，俯仰角±15° 的区域内实现平均功率为35dBm的信号优质覆盖；3. 让该区域的“凹坑”尽量小，也就是功率的最大值和最小值的差尽可能小，覆盖应努力实现均匀覆盖的特性。
+ %波束配置矢量要求：1. 整个覆盖区域内，平均辐射功率35dBm；2. 波束覆盖的“凹坑”尽可能小；3. 覆盖波束个数尽可能少；4. 用尽可能少的波束，覆盖水平角±30°，俯仰角±15°的区域。请给出波束配置列表[z_1,z_2,…,z_(M]) （M为波束个数）。
+\subsubsection{基于遗传算法的模型求解}
+ 继续应用复数的合成运算方法，在文献\cite{duan},\cite{tan2018}和\cite{lin}的启发下，运用遗传算法寻找使覆盖区域平均功率为35dBm 的情况下，“凹坑”最小的最佳配置方案。首先，遗传算法用来模拟遗传信息的演化过程。首先合理的假设出适应度函数。用适应度函数模拟自然界的淘汰规则，基因通过进化产生出不同于上一代的新种群，最终得到理想个体；对应到本题目，借用遗传算法可以模拟遗传信息的演化过程，并采用“适应度函数”来评估“基因（二进制字符串）”对于条件的适应程度，利用轮盘赌的方式设出比例，不断进行筛选，挑出优势种群，淘汰劣势种群，把32 个天线单元配置变量作为遗传信息，对初始种群的生成采用了三种生成方法，保证初始种群里面个体基因都是随机生成的，采用“适应度函数”淘汰掉不合理不符合题目要求的天线单元配置，不断迭代计算直至收敛，最终找到理想的配置情况。%人为合理的从${5^{32}}$ 种组合中随机的生成一定数目的种群规模，也就是组合数量，
+
+1.对32个天线单元初步进行编码操作：
+
+类似于基因编码，先不考虑关闭天线的操作，每个天线单元可以有四种设置对应于移相器的四种相位，可以用十进制数0，1，2，3来表示，也可以用两位二进制数00，01，10，11来表示，64 位二进制数串每两个二进制位按照00，01，10，11这个顺序来改变共64种“个体”。这64位的二进制数串就可以被看成一条带有配置信息的“个体”，即用一组二进制数串作为基因编码对象，对他进行后续的交叉变异操作。
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=15cm,height=5cm]{yi}\\
+  \caption{染色体交叉、变异示意图}\label{bianyi1}
+\end{figure}
+%\begin{figure}[h]
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[width=5cm,height=3cm]{bianyi1}\\
+%  \caption{染色体变异示意图}\label{bianyi1}
+%\end{figure}
+
+2.适应度函数：
+
+ 适应度函数用于评价每个个体所代表的移相器配置方案，综合:“凹坑”的个数，功率最大值最小值的差的“凹坑”梯度（也就是为了实现“凹坑”尽可能的在覆盖区域里面比较少），以及覆盖区域功率分布的平均梯度（这个指标是为了实现区域被覆盖得比较均匀平坦），为选择操作提供依据。在生物遗传算法中，适应度函数是用来评价并淘汰劣势个体的标准，所以可以设定有关“凹坑”是否分布的尽可能少的函数作为适应度函数，而“凹坑”本质上是和覆盖区域每个测量点的功率分布大小有关。因而，在水平角±30°，俯仰角±15° 的区域内，采用从$13\times7$ 个观测点处测得的功率组成$13\times7$的功率矩阵的相关运算作为淘汰不符合条件的天线单元配置的评价标准。
+
+适应度函数的定义和具体实际概念如下：
+% Table generated by Excel2LaTeX from sheet 'Sheet2'
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{shiyi}\\
+  \caption{示意图}\label{shiyi}
+\end{figure}
+
+
+\begin{equation}\label{m0}
+  \begin{array}{l}
+\bar E = \frac{1}{9}{\rm{[E(i - 1,j - 1) + E(i - 1,j) + E(i - 1,j + 1) + E(i,j - 1) + E(i,j)}}\\
+{\rm{            + E(i,j + 1) + E(i + 1,j - 1) + E(i + 1,j) + E(i + 1,j + 1)]}}
+\end{array}
+\end{equation}
+\begin{equation}\label{m1}
+ {\left. {{f_{(1)}}} \right|_{(i,j)}}{\rm{ = (}}\bar E - 35{)^2}
+\end{equation}
+\begin{equation}\label{m2}
+  {\left. {{f_{(2)}}} \right|_{(i,j)}}{\rm{ = [}}\bar E - E(i,j){]^2}
+\end{equation}
+\begin{equation}\label{m3}
+  F = \min \left( { - \frac{{{{\sum\limits_{{\rm{j}} = 1}^{{\rm{13}}} {\sum\limits_{i = 1}^7 {\left. {{f_{(1)}}} \right|} } }_{i = 1,j = 1}}}}{{\sum\limits_{{\rm{j}} = 1}^{{\rm{13}}} {{{\sum\limits_{i = 1}^7 {\left. {{f_{(2)}}} \right|} }_{i = 1,j = 1}}} }}} \right)
+\end{equation}
+
+公式（\ref{m0}）表示某一观测值及附近的观测值的均值。
+
+公式（\ref{m1}）表示每一个观测值与期望值35dBm的距离的平方，事实上，我们希望越小越好。
+
+公式（\ref{m2}）表示每一个观测值与附近观测值的均值距离的平方，用于描述辐射值是否平滑，即“凹坑”的多少，该式值越小则表示“凹坑”越少。
+
+公式（\ref{m3}）表示在满足观测区域观测值均值为35dBm的同时，要求“凹坑”尽量小的目标函数。
+
+3.种群进化：
+
+一次完整的进化包括选择，交叉和变异，群体的每一次进化都会更逼近理想值，从而逐步找到最优解。
+
+选择操作的作用是以和适应值成正比的概率遴选出的个体进入下一代，本文将选择操作转化为最小适应值的选取问题。在进行选择操作时，为了避免过早陷入局部最优，文中在传统轮盘赌算法的基础上做了如下改进: 将每一代种群中的个体按照适应度大小降序排列， 保留前 1 /4 的个体和中间 2 /4 的个体，剔除最后1 /4 的个体，然后依据轮盘赌算法在前 1 /4 的个体中选 出 2 份，在中间 2 /4 的个体中选出 1 份，以保证种群 数目不变。
+
+全局搜索的作用，其对象是低适应值个体的二进制步长的随机某位，本文在进行交叉和变异操作时，采用 Srinivas \cite{s}等提出的 AGA 交叉、变异概率计算公式，根据个体在种群中的不同适应度大小自适应地调整个体基因的 交叉和变异概率。变异操作会使得基因发生随机改变，产生新染色体，其目的是放置寻优过程陷入局部最优解导致过早收敛，本文方法以设定的变异概率$P_m$进行基因变异。
+
+4.结果分析:
+
+我们采取了上述算法对雷达单元的配置进行了不断迭代，为了尽可能的减少算法陷入局部最优的情况，我们对初始种群的生成采用了三种生成方法：随机生成种群规模为30个的“个体”；随机生成种群规模为100 个的“个体”；采用2个二进制位{00，01，10，11}来表征每一个单元的可能的四种移相器的选择：0°，90°，180°，270°，即用$32\times2=64$ 个二进制位的数串来进行遗传算法操作，共64 种“个体”。三种种群初始化策略得到的收敛性能和收敛曲线如下：
+\begin{table}[H]
+  \centering
+  \caption{三种初始种群生成方法收敛性能表}
+    \begin{tabular}{rrrr}
+    \toprule[3pt]
+    \multicolumn{1}{l}{种群规模} & \multicolumn{1}{l}{平均收敛代数} & \multicolumn{1}{l}{平均收敛值} & \multicolumn{1}{l}{收敛次数} \\
+    \midrule[1.5pt]
+    30    & 6     & 0.6452 & 100 \\
+    100   & 7     & 0.6519 & 100 \\
+    64    & 6     & 0.6539 & 100 \\
+    \bottomrule[3pt]
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{zhe}\\
+  \caption{三种初始种群生成方法收敛性能曲线}\label{zhe}
+\end{figure}
+
+对三种结果进行可视化之后得到
+%//放三张图，并且是没关的。而且给出相应的配置！！！
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[height=5.5cm]{san1}\\
+  \caption{三种初始化种群方法的功率等高线图的比较}
+  \label{111}
+\end{figure}
+
+其中随机生成30个“个体”和64位二进制数串表征的共64 个“个体”的序列差别很大，但适应度相差不大；利用随机生成种群规模为100代的策略比随机生成种群规模为30 代的策略平均收敛代数大，但在最终结果上差异并不甚明显，说明不论何种种群初始方法，该算法得到的结果均具有一定的可靠性和普遍性。
+
+上述使用遗传算法的流程图如下：
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=13cm,height=9cm]{2tiliu}\\
+  \caption{基于遗传算法的波束配置问题解决的流程图}
+  \label{2tiliu}
+\end{figure}
+
+
+5.算法改进:
+
+上文的算法移相器的选择只有0°，90°，180°，270°，在该算法的基础上，加入移相器可以关闭的选项以实现尽可能少的波束的要求。所以现在每个天线单元的波束配置上有五种情况。
+将基因的容量扩大，采用3个二进制位{000，001，010，011，100}来表征每一个单元的可能的五种选择，即用$32\times3=96$ 个二进制位的数串来进行遗传算法操作。对初始种群的生成仍采用了三种生成方法：随机生成种群规模为30个的“个体”，随机生成种群规模为100 个的“个体”，96 位二进制数串每三个二进制位按照{000，001，010，011，100}这个顺序来改变共160 种“个体”，三种种群初始化策略得到的收敛性能和收敛曲线如下：
+\begin{table}[H]
+  \centering
+  \caption{三种初始种群生成方法收敛性能表（可以关闭一些单元）}
+    \begin{tabular}{rrrr}
+    \toprule[3pt]
+    \multicolumn{1}{l}{种群规模} & \multicolumn{1}{l}{平均收敛代数} & \multicolumn{1}{l}{平均收敛值} & \multicolumn{1}{l}{收敛次数} \\
+    \midrule[1.5pt]
+    30    & 7     & 0.6325 & 100 \\
+    100   & 8    & 0.6410 & 100 \\
+    64    & 7     & 0.6363 & 100 \\
+    \bottomrule[3pt]
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.8]{zhe2}\\
+  \caption{三种初始种群生成方法收敛性能曲线}\label{zhe2}
+\end{figure}
+
+6.波束配置结论：
+% Table generated by Excel2LaTeX from sheet 'Sheet2'
+\begin{table}[H]
+  \centering
+  \caption{微波问题32个天线单元的波束配置表}
+    \begin{tabular}{|l|l|l|l|l|l|l|l|}
+    \toprule[3pt]
+    \multicolumn{1}{|r|}{1} & \multicolumn{1}{r|}{2} & \multicolumn{1}{r|}{3} & \multicolumn{1}{r|}{4} & \multicolumn{1}{r|}{5} & \multicolumn{1}{r|}{6} & \multicolumn{1}{r|}{7} & \multicolumn{1}{r|}{8} \\
+    \midrule[1.5pt]
+    270°  & 关闭    & 关闭    & 关闭    & 关闭    & 270°  & 关闭    & 270° \\
+    \midrule[3pt]
+    \multicolumn{1}{|r|}{9} & \multicolumn{1}{r|}{10} & \multicolumn{1}{r|}{11} & \multicolumn{1}{r|}{12} & \multicolumn{1}{r|}{13} & \multicolumn{1}{r|}{14} & \multicolumn{1}{r|}{15} & \multicolumn{1}{r|}{16} \\
+    \midrule[1.5pt]
+    180°  & 0°    & 90°   & 0°    & 0°    & 0°    & 90°   & 0° \\
+    \midrule[3pt]
+    \multicolumn{1}{|r|}{17} & \multicolumn{1}{r|}{18} & \multicolumn{1}{r|}{19} & \multicolumn{1}{r|}{20} & \multicolumn{1}{r|}{21} & \multicolumn{1}{r|}{22} & \multicolumn{1}{r|}{23} & \multicolumn{1}{r|}{24} \\
+    \midrule[1.5pt]
+    0°    & 270°  & 90°   & 关闭  & 180°  & 180°  & 180°  & 270° \\
+    \midrule[3pt]
+    \multicolumn{1}{|r|}{25} & \multicolumn{1}{r|}{26} & \multicolumn{1}{r|}{27} & \multicolumn{1}{r|}{28} & \multicolumn{1}{r|}{29} & \multicolumn{1}{r|}{30} & \multicolumn{1}{r|}{31} & \multicolumn{1}{r|}{32} \\
+    \midrule[1.5pt]
+    90°   & 关闭    & 180°  & 0°    & 关闭    & 270°  & 270°  & 0° \\
+    \bottomrule[3pt]
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+
+将得到的配置方案功率等高线图可视化，如下图:
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{2last}\\
+  \caption{微波问题2配置方案功率等高线图}
+  \label{2last}
+\end{figure}
+
+关闭了第2，3，4，5，7，20，26，29个天线单元发射信号的通道，对得到的功率矩阵计算可得平均功率为35.0855dBm，横向梯度方差15.0083，纵向梯度方差41.7075 ，区域内最大功率为39.5736dBm，最小功率为28.4835dBm。由图8可以看出，在水平角±30°，俯仰角±15° 的区域内等高线图中颜色差异不大，即基本都是黄色橘色，所以该方案较好地实现了功率35dBm 的均匀覆盖，而且“凹坑”很小。
+
+
+
+\section{骨干网问题}
+\subsection{问题分析}
+对于骨干网的分析，我们经过了以下几步流程：
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[height=8cm]{liu2hou}\\
+  %\caption{}
+  \label{liu1}
+\end{figure}
+\begin{itemize}
+                    \item 寻找与信息交互量有关的数据，进行各种指标、各种范围层次的数据预处理。
+                    \item 考虑到不同年龄段、不同收入阶层用户的信息需求量的不同情况，从全国分析到广东省，利用熵权法设置权重，计算出31个省的信息需求量评分，预估未来十年（截止2028 年）信息时代广东省全部人口的信息量。
+                    \item 从广东省总量分析到21 个行政城市，找到从广东省到省内21个城市的信息需求量映射关系，求得广东省内部21个城市的信息接入量，将其作为骨干网设计的重要考虑指标。
+                    \item 确定每个行政城市之间距离，采用最小生成树算法求出初步的21 个城市最短线路连接。
+                    \item 把21个行政城市按地理位置和最短路分成东、西2个大区。
+                    \item 再采用网络最大流算法、深度优先搜索算法（DFS），依据各个城市信息不同的需求量、不同的线路特性、距离及成本，来求解几个比较优质的网络部署方案。
+                    \item 构造约束条件，建立科学有效的部署价值函数，在刚才求解出的几个方案中，用这个函数评估并找到网络价值最大化的网络部署方案。
+                    \item 考虑不同接入人群的接入价值，即再加入对人群年龄、收入、地区的考量，再次用估值函数做出评价，得到广东省21个城市骨干网最优部署设计方案。
+                  \end{itemize}
+
+\subsection{数据预处理}
+首先，参考有关信息化体系评价分析修正方法有关的文献\cite{2} 和\cite{song}，受到上述文献的启发，为了分析的准确性，我们认为全国信息量相关指标可以相应的映射到广东省的信息量相关指标上，而广东省信息量指标也是可以对应的映射到省内的21个行政市。
+
+在《2018年中国互联网报告》、《网宿科技：2018 年中国互联网发展报告》和国家数据官网（参考文献\cite{2018bao}\cite{__2018}和网址\cite{ju}），查找数据并分析出有效科学的指标：查找到并摘取了全国31 个省的在上述文献中提到的成分分析矩阵贡献率为0.92 以上的五个重要指标：全国各省市互联网普及情况（单位：\%）、全国31 个省IPV4比例（单位：\%）、全国31 个省网民比例（单位：\%）、全国各省独立IP数分布情况（单位：\%）、全国31 个省GDP （单位：亿元）。将客观科学的数理方法与已有的经验相结合，建立了简洁高效、可靠合理的信息化测度指标体系。
+\begin{figure}[H]
+\centering
+\subfigure[全国各省市互联网普及情况（单位：\%）]{
+\includegraphics[width=7cm,height=5.5cm]{puji}
+%\caption{fig1}
+}
+\quad
+\subfigure[全国31个省IPV4比例（单位：\%）]{
+\includegraphics[width=7cm,height=5.5cm]{IPV4}
+}
+\quad
+\subfigure[全国31个省网民比例（单位：\%）]{
+\includegraphics[width=7cm,height=5.5cm]{hulianwangminbili}
+}
+\quad
+\subfigure[全国各省独立IP数分布情况（单位：\%）]{
+\includegraphics[width=7cm,height=5.5cm]{IPquanguo1}
+}
+%\quad
+%\subfigure[全国31个省GDP（单位：亿元）]{
+%\includegraphics[width=15cm,height=6cm]{gdp}
+%}
+%\quad
+%\subfigure[pic6.]{
+%\includegraphics[width=7cm,height=5.5cm]{score}
+%}
+%\caption{ pics}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=15cm,height=6cm]{gdp}\\
+  \caption{全国31个省GDP（单位：亿元）}\label{gdp}
+\end{figure}
+
+%\begin{figure}[H]
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[width=12cm,height=5cm]{score}\\
+%  \caption{全国31个省经过熵权法计算后的得分情况（单位：分）}
+%  \label{score}
+%\end{figure}
+%\begin{figure}[h]
+%\centering    %居中
+%
+%\subfigure[name of the subfigure] %第一张子图
+%{
+%	\begin{minipage}[h]{0.5\textwidth}
+%	\centering          %子图居中
+%	\includegraphics[height=4.5cm,width=7.5cm]{puji}   %以pic.jpg的0.5倍大小输出
+%	\end{minipage}
+%}
+%	
+%\subfigure[name of the subfigure] %第二张子图
+%{
+%	%\begin{minipage}[h]{0.5\textwidth}
+%	\centering      %子图居中
+%	\includegraphics[height=4.5cm,width=7.5cm]{IPquanguo1}   %以pic.jpg的0.5倍大小输出
+%	\end{minipage}
+%}
+%
+%\caption{name of the figure} %  %大图名称
+%\label{fig:1}  %图片引用标记
+%\end{figure}
+
+%\begin{figure}[h]
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[scale=0.5]{quanguohulianwangpuji}\\
+%  \caption{全国各省市互联网普及情况（单位：\%）}\label{quanguohulianwangpuji}
+%\end{figure}
+%\begin{figure}[h]
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[scale=0.5]{IPquanguo1}\\
+%  \caption{全国各省独立IP数分布情况（单位：\%）}\label{IPquanguo}
+%\end{figure}
+%
+%\begin{figure}[h]
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[scale=0.5]{wangminbili}\\
+%  \caption{全国31个省网民比例（单位：\%）}\label{hulianwangminbili}
+%\end{figure}
+%
+%\begin{figure}[h]
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[scale=0.5]{IPV4}\\
+%  \caption{全国31个省IPV4比例（单位：\%）}\label{IPV4}
+%\end{figure}
+%
+%\begin{figure}[h]
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[scale=0.5]{gdp}\\
+%  \caption{全国31个省IPV4比例（单位：\%）}\label{gdp}
+%\end{figure}
+%
+%\begin{figure}[h]
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[scale=0.5]{score}\\
+%  \caption{全国31个省经过熵权法计算后的得分情况（单位：分）}\label{score}
+%\end{figure}
+
+%\begin{figure}
+%\centering
+%\begin{varwidth}[t]{\textwidth}
+%\vspace{0pt}
+%\includegraphics{quanguohulianwangpuji}
+%\end{varwidth}%
+%\qquad
+%\begin{varwidth}[t]{\textwidth}
+%\vspace{0pt}
+%\includegraphics[height=4cm]{IPquanguo}
+%\end{varwidth}
+%\caption{两幅狮子图形的按顶部对齐}
+%\end{figure}
+%\par
+
+另外，查阅资料得知，现在我国人口增长模型属于“三低”模型：“低生育率，低出生率，低死亡率”，以及由国家数据官网\cite{ju}上查到的柱状图\ref{0}，我们可以大体看出全国网民人数也是属于S 曲线模型的。
+
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{0.png}\\
+  \caption{1999年-2007年全国互联网上网人数}\label{0}
+\end{figure}
+
+所以依据人口数据呈S曲线变化的特性，使用origin 软件拟合了从1999 年到2007 年的全国互联网上网人数（万人），利用其中的S 型函数拟合里面的BiDoseResp函数，拟合得到的全国互联网人数的函数关系式和曲线如下。其中可决系数（亦称确定系数）${R^{\rm{2}}}$，${R^{\rm{2}}}$最大值为1。${R^{\rm{2}}}$ 的值越接近1，说明回归直线对观测值的拟合程度越好，这个函数拟合度非常高，可以看到下图这个函数表达式拟合求出的${R^{\rm{2}}}=0.99927$，非常接近1。
+\begin{equation}\label{e6}
+  \begin{array}{l}
+y = A1 + (A2 - A1)\left[ {\frac{p}{{1 + {{10}^{(LOGx01 - x)h1}}}} + \frac{{1 - p}}{{1 + {{10}^{(LOG \times x22 - x)h2}}}}} \right]\\
+{\rm{    =  - 4281}}{\rm{.03236}} + ({\rm{108736}}{\rm{.52167}} - ({\rm{ - 4281}}{\rm{.03236}}))\left[ {\frac{{{\rm{0}}{\rm{.19702}}}}{{1 + {{10}^{({\rm{2008}}{\rm{.21077}}) \bullet {\rm{0}}{\rm{.49803}}}}}} + \frac{{1 - {\rm{0}}{\rm{.19702}}}}{{1 + {{10}^{({\rm{2013}}{\rm{.61542}} - x) \bullet {\rm{0}}{\rm{.08059}}}}}}} \right]
+\end{array}
+\end{equation}
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{or}\\
+  \caption{1999年-2018年全国上网人数origin拟合图（单位：万人）}
+  \label{or}
+\end{figure}
+
+令公式（\ref{e6}）中的x=2028，我们计算得到了预估的2028年全国网民人数为1,087,300,000 人，也就是10.873 亿人。
+
+
+另外，在中华人民共和国工业和信息化部官网\cite{w}上的有关通信业经济运行情况网页上查找到的
+从2018年3月到2019年3月全国户均移动互联网接入流量折线图\ref{1} 见下方。
+
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{1}\\
+  \caption{2018年3月到2019年3月全国户均移动互联网接入流量折线图（GB/户）}
+  \label{1}
+\end{figure}
+
+考虑到近年来人们对互联网接入需求呈现爆炸式的指数型增长的数据特点，使用matlab工具箱里面的指数型函数来拟合折线图\ref{1} ，同理，也得到了残差很小可决系数为${R^{\rm{2}}}=0.9825$很接近1，拟合度高 的函数表达式和曲线:
+\begin{equation}\label{18}
+  {\rm{c  =  a}}{e^{{\rm{(bx)}}}} = 2.919{e^{({\rm{ 0}}{\rm{.06086}}x)}}
+\end{equation}
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  %\includegraphics[trim=5 9 6 9]{quan21}
+  \includegraphics[scale=0.5]{R}\\
+  \caption{全国户均移动互联网接入流量函数拟合图（GB/户）}\label{R}
+\end{figure}
+
+从2018年3月开始算起，到2028年12月应为第130个月，代入公式（\ref{18}）中的x=130-1=129，得到了预估的2028 年全国户均移动互联网接入流量为$7.4964\times{10^3}$GB/ 户。
+
+那么在得到了2028年全国户均移动互联网接入流量和全国网民人数之后，按照每月四周来分析计算，一周的人均上网时间为21 个小时（参考文献\cite{2018bao})，用全国网民人数乘以全国户均移动互联网接入流量，再除以时间，换算到2028年全国人均信息需求量约为26953821.82539GB/s。
+
+\subsection{基于熵权法分析出的广东省信息需求量占全国总量的比例}
+我们参考了有关的文献\cite{2}，文献中列出了三种被广泛应用且拟合度比较好的方法：熵权法、CRITIC 法、标准离差法。其对于全国信息化水平的得分和排名拟合程度见下表：
+% Table generated by Excel2LaTeX from sheet 'Sheet2'
+\begin{table}[H]
+  \centering
+  \caption{结果拟合度程度表}
+    \begin{tabular}{crrr}
+    \toprule[2.5pt]
+    方法    & \multicolumn{1}{l}{熵权法} & \multicolumn{1}{l}{CRITIC法} & \multicolumn{1}{l}{标准离差法} \\
+    \midrule[1.1pt]
+    全国信息化水平得分图的拟合度（\%) & 99.6  & 94.7  & 92.9 \\
+    全国信息化水平排名图的拟合度（\%) & 97.9  & 98.4  & 96 \\
+    \bottomrule[2.5pt]
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+
+拟合度全部在90\% 以上， 最高达99.6\%， 说明客观赋权法所得权重与结果较为科学准确， 能通过统计数据刻画全国31 个省市区的信息化发展水平。可以看到其中有一种对全国信息化水平得分图和全国信息化水平排名图的拟合度均很高的的有关信息化体系评价赋权重的方法：熵权法 ，于是下面将采用“熵权法”计算广东省的信息需求量在全国共31 个省的信息化水平的排名和占比。
+
+考虑到熵权法是涉及到信息论基本原理的专业词汇，下面简单介绍一下熵权法以及计算广东省与信息量的指标占全国指标的映射比例关系求解过程。熵权法，是一种客观赋权法，是对系统水平评价的一种科学方法：在信息论中，熵，是对系统无序程度的一种度量，如果指标的信息熵越小，那么这个指标他能够提供的信息量相应的也越小，在系统的综合评价中所起作用也必然越小，从而这个指标的权重也应该越低。依据熵的特性，可以通过计算熵值来判断一个事件随机性以及无序程度，也可以利用熵值判断某个指标的离散程度，指标离散程度越大，他对综合评价的影响也越大，权重也越大。因此现在很多领域，如农业、金融业、人口统计学上都广泛的应用熵权法分析赋权。
+\par
+熵权法分析步骤如下：
+\par
+1.全国31个样省份作为样本，使用5个成分分析矩阵贡献率大于0.92的指标：全国各省市互联网普及情况（单位：\%）、全国31 个省IPV4比例（单位：\%）、全国31 个省网民比例（单位：\%）、全国各省独立IP数分布情况（单位：\%）、全国31 个省GDP （单位：亿元），${x_{pq}}$ 为第p 个样本的第q个指标的数值。
+
+2.指标的归一化处理：异质指标同质化。
+
+由于各项指标的计量单位并不统一，因此在用它们计算综合指标前，先要进行标准化处理，即把指标的绝对值转化为相对值，从而解决各项不同质指标值的同质化问题。
+
+另外，正向指标和负向指标数值代表的含义不同（正向指标数值越高越好，负向指标数值越低越好），因此，对于正向负向指标需要采用不同的算法进行数据标准化处理：
+\begin{equation}\label{e1}
+  {Y_{pq}} = \frac{{{x_{pq}} - \min \left\{ {{x_{1q}}, \ldots ,{x_{_{pq}}}} \right\}}}{{\max \left\{ {{x_{1q}}, \ldots ,{x_{pq}}} \right\} - \min \left\{ {{x_{1q}}, \ldots ,{x_{pq}}} \right\}}}
+\end{equation}
+
+3.计算第q项指标下第p个样本值占该指标的比重：
+\begin{equation}\label{e0}
+  {P_{pq}} = \frac{{{Y_{pq}}}}{{\sum\limits_{p = 1}^{31} {{Y_{pq}}} }},p = 1, \ldots ,31,q = 1, \ldots,5
+\end{equation}
+
+4. 计算第q项指标的熵值：
+\begin{equation}\label{e2}
+  \begin{array}{*{20}{l}}
+{{E_q} =  - {{(\ln (31))}^{ - 1}}\sum\limits_{p = 1}^{31} {{P_{pq}}} \ln \left( {{P_{pq}}} \right)}\\
+{{P_{pq}} = 0\quad,\quad \mathop {\lim }\limits_{{P_{pq}} \to 0} {P_{pq}}\ln {P_{pq}} = 0}
+\end{array}
+\end{equation}
+
+5计算信息熵的冗余度（差异）：
+\begin{equation}\label{e3}
+  {d_q} = 1 - {E_q},q = 1, \ldots,5
+\end{equation}
+
+6计算各项指标的权重：
+\begin{equation}\label{e4}
+  {W_q} = \frac{{{d_q}}}{{\sum\limits_{q = 1}^5 {{d_q}} }},q = 1, \ldots,5
+\end{equation}
+
+7.计算各样本的综合得分：
+\begin{equation}\label{e5}
+  {S_p} = \sum\limits_{q = 1}^5 {{W_p}} {Y_{pq}},p = 1, \ldots ,31
+\end{equation}
+
+全国31个省经过熵权法计算后的得分情况如下图：
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=13cm,height=8.5cm]{score}\\
+  \caption{全国31个省经过熵权法计算后的得分情况（单位：分）}
+  \label{score}
+\end{figure}
+%8.先计算各行政区的综合得分${S_p}$ ，在计算全国的综合得分${S_0}$，以${S_0}$为标准进行标准化处理：
+%\begin{equation}\label{e6}
+%  {\zeta _i} = \frac{{{S_p}}}{{{S_0}}},p = 1, \ldots ,31
+%\end{equation}
+
+%有资料查得2018年人均每月互联网接入流量为7.27GB
+%进而得到每一个行政区的人均互联网接入量：
+%
+%（注：可以预见到的是 跟国家的信息化投入水平，以及科技创新重视程度和人员素质有关 ）
+%查的每个行政区的人口数  （注：  这个用于预测未来的人口增长）
+%则每个行政区的总互联网接入量：
+%
+%值得注意的是，前面熵权计算时各指标应当是动态的，即
+经过评分计算，得到广东省的信息量需求数据应为全国相同类别数据的8\%。上文已经求得的预估的2028 年全国人均信息需求量约为26953821.82539GB/s。所以预估的2028年广东省信息需求量约为2156305.74603GB/s，也就是2105.76733TB/s。
+
+\subsection{求解各个行政市的信息需求量}
+由于21个行政城市的信息需求量方面数据较为缺乏，为了保证分析的合理性，在考虑行政城市和全省之间的映射关系时不再采用具有多指标因子的熵权法进行系统评分分析。下面采用城市和全省信息需求量的比例关系求出21个城市的信息需求量。查阅21 个行政城市的2018 年的地方年鉴和公报，得到每个城市的电信业务总量，从而得到每个行政市电信业务总量占全广东省的电信业务总量的比例，从而最终求解出每个行政市的信息需求量占全省的比例，见下表\ref{c}。21 个行政城市预估的2028 年各个市的信息需求量（单位：TB）三维柱状图：
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[width=15cm,height=7cm]{21}\\
+  \caption{21个行政城市预估的2028年各个市的信息需求量（单位：TB）}\label{21}
+\end{figure}
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+\begin{table}[H]
+  \centering
+  \caption{广东省21个行政市的信息需求量}\label{biao}
+    \begin{tabular}{|l|r|r|r|}
+    \toprule[3pt]
+    地区    & \multicolumn{1}{l|}{电信业务总量（亿元）} & \multicolumn{1}{l|}{百分比} & \multicolumn{1}{l|}{信息需求量（TB/s）} \\
+    \midrule[1.5pt]
+    潮州    & 93.32 & 1.7364\% & 36.57  \\
+    \midrule
+    东莞    & 302.95 & 5.6371\% & 118.70  \\
+    \midrule
+    佛山    & 601.11 & 11.1850\% & 235.53  \\
+    \midrule
+    广州    & 756.03 & 0.1310\% & 275.89\\
+    \midrule
+    河源    & 100.29 & 1.8661\% & 39.30  \\
+    \midrule
+    惠州    & 69.72 & 1.2973\% & 27.32  \\
+    \midrule
+    江门    & 242.16 & 4.5059\% & 94.88  \\
+    \midrule
+    揭阳    & 88.75 & 1.6514\% & 34.77  \\
+    \midrule
+    茂名    & 212.82 & 3.9600\% & 83.39  \\
+    \midrule
+    梅州    & 126.78 & 2.3590\% & 49.68  \\
+    \midrule
+    清远   & 145.4 & 2.7055\% & 56.97  \\
+    \midrule
+    汕头    & 246.77 & 4.5917\% & 96.69  \\
+    \midrule
+    汕尾    & 79.88 & 1.4863\% & 31.30  \\
+    \midrule
+    韶光    & 98.3  & 1.8291\% & 38.52  \\
+    \midrule
+    深圳    & 1622.34 & 30.1873\% & 635.67  \\
+    \midrule
+    阳江    & 78.4  & 1.4588\% & 30.72  \\
+    \midrule
+    云浮    & 38.19 & 0.7106\% & 14.96  \\
+    \midrule
+    湛江    & 276.51 & 5.1451\% & 108.34  \\
+    \midrule
+    肇庆    & 75.22 & 1.3996\% & 29.47  \\
+    \midrule
+    中山    & 336.15 & 6.2548\% & 131.71  \\
+    \midrule
+    珠海    & 179.4 & 3.3381\% & 70.29  \\
+    \midrule
+    广东省   & 5374.25 & 100.0000\% & 2105.76733 \\
+    \bottomrule[3pt]
+    \end{tabular}%
+  \label{c}%
+\end{table}%
+
+
+
+%\newpage
+\section{骨干网问题1}
+%\subsection{算法分析}
+\subsection{最小生成树算法}
+
+城市网络信息通信的发展日新月异，城市与城市之间的信息往来也更加频繁，城际网作为网络时代公共设施规划的重中之重也一直在不断地建设和完善中。城际网建设的主要目的在于建成的网络能够承担城市对外通信需求，那么在广州省城际网的建设问题中，显然应当首先满足任意两个城市之间至少有一条路可以连接两个城市以供互相通信的条件。否则，两个城市的通信必须通过广州中转，则达不到良好的通信时延需求，且占用城市与骨干网网络的带宽。且在实际生活中，铺设网络通信的成本往往和距离成正比，那么问题转化为求总距离最小的使任意两座城市相连通的方案。考虑到可以将城市看成一张图上的顶点，城市之间有相互连接的边，城市之间的直线距离可以设为相应边上的权重，这样可以把对实际问题的分析，抽象成对一个加权无向图的分析，而求总距离最小的相连通方案，即可转换为求图上权值最小的联通生成子图方案，即为求图上最小生成树方案，结合文献
+\cite{pan}，\cite{lic}和问题的特点，本文通过kruskal算法求解最小生成树的方法来求解。
+
+最小生成树就是最小权重生成树，该算法是从边的角度，也就是两两城市之间的距离的角度出发，每次总是选择权重最小的边加入，也就是把最短的两个城市距离加进去，直到加到21-1即20 条边为止，实现了21 一个城市一笔走下来的最短连接。在图论概念下表述为：在一给定的无向图G = (V， E) 中（广东省21个行政城市的地图），(u， v) 代表连接顶点 u 与顶点 v 的边（城市u 和另一个城市v之间的连接线路），而 w(u， v) 代表此边的权重（城市u 和另一个城市v 之间的最短直线距离值），若存在 T 为 E 的子集且为无循环图，使得w(T) 最小，则此 T 为 G 的最小生成树。
+\begin{equation}\label{j0}
+  \omega(t)=\sum_{(u, v) \in t} \omega(u, v)
+\end{equation}
+
+
+21个城市首先被标为0-20个顶点，其中由题目给出的广东省行政图（官网上的图有两个汕尾市，更正为最东边的汕尾应为汕头）如下图：
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{biaohao}\\
+  \caption{21个行政城市顶点标号图}\label{biaohao}
+\end{figure}
+
+参考中华人民共和国自然资源部\cite{guotu}官网上21个城市之间的直线距离数据，并利用Kruskal 最小生成树算法实现了21个城市之间最短的初步连接线，做出最短连接图，如下图：
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[height=8cm]{duanlu}\\
+  \caption{21个行政城市用最小生成树算法生成的最短路连接}\label{duanlu}
+\end{figure}
+
+由上述图\ref{duanlu}，可以根据地理位置自然地分为东西两个大区。红线连接起属于东区的城市，蓝线连接起西区的城市。
+
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[height=8cm]{fenqu}\\
+  \caption{21个行政城市按照地理位置分为东西两个大区}\label{fenqu}
+\end{figure}
+%\subsection{模型建立和基于深度优先搜索优化下的最大流算法求解}
+
+\subsection{网络最大流模型建立}
+
+因为上文只是算出了21个城市之间连接的雏形，但是离如何建立骨干网还有很多要考虑的问题。由于工程实际中要考虑通信线路的容灾能力，以及每个城市对信息接入需求量的不同，上文的模型并不能保证在某条线路发生意外情况下，仍能满足该线路所连接的两个城市的接入需求，并且在基于上述模型初步求解的具体配置过程中发现，在接入量需求大的城市两侧存在接入的线路负担过高，成本也相应远大于需求量少的城市。那么可以想到应在上述提出的模型的基础上再加入一些次边来构成一些小的回路，保证在一条或多条线路受损的情况下，仍能提供可靠的通信接入保障；且由题知，道路的容量和成本之间为离散的对应关系，那么易知可以通过更合理的线路配置在更低的成本下满足所有城市的信息接入需求。也即连接了某两个最短路还未连接的城市，反而可以实现全局成本最低的可能。下面是一些可能的次边方案示意图。
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[height=8cm]{zuocibian}\\
+  \caption{西区的次边图}\label{zuocibian}
+\end{figure}
+所以西半区的次边线路一共有${{\rm{2}}^{\rm{3}}}{\rm{ = 8}}$ 种，8 种西区连接方案示意图如下：
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.8]{zuo81}\\
+  %\caption{21个行政城市西区8种不同次边组合}
+  \label{zuo82}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.8]{zuo82}\\
+  \caption{21个行政城市西区8种不同次边组合}\label{zuo82}
+\end{figure}
+
+下面求解具体的线路规划以及每条线路的具体配置。首先为满足所有城市节点的信息需求，需考虑最大需求的情况，即所有节点同时发送各自最大信息流量于骨干网，由题知，广州作为数据中心，则在该网络中，广州为流量的唯一汇点，而流量的源点为其余20个城市。另外由文献\cite{liao}可知，流就是将对象由一个地点送至另一个地点，诸如交通流，电流，货物流，现金流等等，虽然流的形式不同，但都面临一个共同问题，即希望利用已有的网络，从一个地点输送尽可能多的流量至另一个地点。基于信息量具有可类比流量的特点，可以借助“网络最大流算法”来解决该问题。网络最大流是指从出源点到汇点能“流”过的最大流量，它代表了网络系统实现某项功能的最大能力，这类网络的组成弧均具有确定的通过能力，称为弧的容量，记为$c_{ij}$, 而实际通过弧的流量，记为$f_{ij}$。 因为各个弧容量的配置关系可能不协调，有些弧的流量常常达不到容量值。因此，研究实际能通过网络的最大流量问题，可以充分发挥网络的设备能力，并且能解决为使最大流量增大应如何改造网络的问题。
+\subsection{最大流算法的基本概念}
+下面将构建一些客观的科学合理的概念模型和约定。
+\begin{itemize}
+ %\item 管道网络中每条边的最大通过能力（容量）是有限的，实际流量不超过容量。本题中，流过每种调制格式的各个城市的信息量应注意要小于所有接入这个城市的网络容量（单位：TB/s）总和的限制，否则会和水管爆掉一样，这种架线部署方式是无法满足未来10 年这个城市里面的人对于信息量的需求的。
+\item 图、容量网络、汇点、源点：一个图是由点集$V={v_{i}}$，也就是刚才提到的21个城市作为点集，和V 中元素的无序对的一个集合$E={e_{k}}$所构成的二元组，E就是连接城市的城际网，记为连通图G=(V,E)，V中的元素${v_{i}}$叫做顶点，E 中的元素$e_{k}$，叫做边。仅有一个出次为0的点$v_{t}$称为汇点，也就是本题目中的广州市作为信息中心，仅有一个入次为0 的点$v_{s}$称为源点，中间各个城市顶点流入信息量等于流出信息量，在这种情境下构造设计出的的网络G 称为容量网络，常记做G=(V,E,C)。%
+\item 容量和流量：对于连通图G=(V,E)，G的每条边$(v_{i},v_{j})$上的非负数$c_{ij}$ 称为边的容量，对应于本题目中就是架设的不同调制格式网络的容量。对任一G中的边$(v_{i}，v_{j})$ 有流量$f_{ij}$，称集合$f=f_{ij}$为网络G 上的一个流，对应于两两城市之间实际的信息交互量。由于各弧容量配置可能不协调，实际通过各弧的流量$f_{ij}$ 不可能处处都到达容量值$c_{ij}$。 对于一个连通图，一般规定，括号中第一个数字代表容量，第二个数字代表流量。
+\item 主边和次边：主边就是由最小生成树算法生成的21个城市最短连接线路；次边则是依据地理位置，在一些未连接的城市之间建立的新连接。由本题可以看到如上图\ref{zuocibian} 所示的西区中三条蓝色虚线画出的新加的次边。
+%\begin{figure}[H]
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[height=8cm]{zuocibian}\\
+%  \caption{西区的次边图}\label{zuocibian}
+%\end{figure}
+%所以西半区的次边线路一共有${{\rm{2}}^{\rm{3}}}{\rm{ = 8}}$种，8种西区连接方案示意图如下：
+%\begin{figure}[H]
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[scale=0.8]{zuo81}\\
+%  %\caption{21个行政城市西区8种不同次边组合}
+%  \label{zuo82}
+%\end{figure}
+%\begin{figure}[H]
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[scale=0.8]{zuo82}\\
+%  \caption{21个行政城市西区8种不同次边组合}\label{zuo82}
+%\end{figure}
+\item 可行流：\par
+
+\quad \quad 称满足下列两个条件的流为可行流：\par
+
+\quad \quad 1.容量规则：对G中的每条边$(v_{i},v_{j})$，有0≤$f_{ij}$≤$c_{ij}$；即每条边上的流量非负而且最大也只能达到容量的限制。信息量只能是正值，而且实际流量是不能超过网络容量限制的，否则我们必须得考虑更换更大容量得网络调制格式，或者架设更多数量的连接网络。\par
+
+\quad \quad 2.守恒规则：对中间点$v_{i}$，有$$\sum_{k} f_{k i}=\sum_{j} f_{i j}$$  即物资的输入量和输出量相等。在假设有虚拟源点之后，除了源点（最末端的城市们）和汇点（广州市）之外的城市，由于把自身信息需求量算作源点流入它的一个流量，那么它将满足作为中间节点流入量等于流出量的条件。
+对源、汇点$v_{s}$,$v_{t}$，有$$\sum_{i} f_{s i}=\sum_{j} f_{j t}=f(v)$$  $f_{ij}$ 为网络流的总流量。
+一个流$f={f_{ij}}$，当$f_{ij}=c_{ij}$，则称流f对边$(v_{i},v_{j})$是饱和的，否则称f 对$(v_{i},v_{j})$ 不饱和。
+\item 割集：无论拿掉哪个割集，源点$v_{t}$到汇点$v_{t}$便不再相通，所以任何一个可行流都会经过割集，且不会超过任一割集的容量。最小割如同瓶颈一般，即使是最大流也无法超过最小割。
+\item 最大流：容量网络的最大流是使得从网络起点（或称发点或源点）到终点（或称收点或汇点）的总流量达到最大的可行流$f={f_{ij}}$。表述为以下数学模型的最优解：
+    \begin{equation}\label{e19}
+  \left\{ {\begin{array}{*{20}{c}}
+{\min V = {f^*}}\\
+{\sum {{f_{ij}}}  - {f_{ji}} = 0\quad (i \ne s,t)}\\
+{\sum {{f_{sj}}}  - {f_{js}} = v(f)\quad (i = s)}\\
+{\sum {{f_{ij}}}  - {f_{ji}} =  - v(f)\quad (i = t)}
+\end{array}} \right.
+\end{equation}
+\item 边的剩余容量：${\mathop{\rm c}\nolimits} {\rm{f}}(u,v) = c(u,v) - f(u,v)$这定义了以${\rm{Gf(V, Ef)}}$表示的剩余网络，它显示可用的容量的多少。在原网络中由u 到v没有边，在剩余网络仍可能有由u到v的边。因为相反方向的流抵消，减少由v 到u 的流等于增加由u到v的流。
+\item 增广路：首先，假如所有边上的流量都没有超过容量（不大于容量），那么就把这一组流量，或者说这个流，称为一个可行流。一个最简单的例子就是零流，即所有的流量都是零的流。从这个零流开始考虑，假如有一条路，这条路从源点开始一直一段一段的连到了汇点，并且这条路上的每一段都满足流量严格小于容量，那么，一定能找到这条路上的每一段的（容量-流量）的值当中的最小值。现在把这条路上每一段的流量都加上这个最小值，一定可以保证这个流依然是可行流。这样就得到了一个更大的流，他的流量是之前的流量+最小值，而这条路就叫做增广路。之后不断地从起点开始寻找增广路，每次都对其进行增广，直到源点和汇点不连通，也就是找不到增广路为止。当找不到增广路的时候，当前的流量就是最大流。
+
+
+%\item 割集和最小割：对于容量网络，由于各弧容量$c_{ij}$配置得不合适，结果有的地方能通过较大流量，而有的地方能通过的流量却较小，小的地方就限制了最大流的上限值，成为网络流的“瓶颈”（也可以被称为“卡脖子”地区）。因此，研究从起点到终点的流径中，哪些弧容量起了限制最大流的作用，是具有实际应用的问题，而“割集”这个概念就是我们研究网络流“瓶颈”这种限制条件的一种工具。
+\end{itemize}
+\subsection{最大流算法分析}
+假设任一城市为源点，广州市作为汇点，那么若从该城市出发的到达广州的最大流的流量大于该城市的需求量，则可说该网络满足要求；如果对所有城市，该网络都满足要求，则可称该网络满足所有城市的接入要求。
+
+为消除在单独计算某一城市时，其它城市的流量对计算上的影响，本文虚拟出一个源点${S'}$，${S'}$，它和每一个城市都有一条边$S'{v_i},i = 1,{\rm{2,}} \ldots {\rm{21}}$，且边的容量设为所连 接城市的信息需求量的值，则在新的模型中，所有城市结点的流入量等于流出量，那么对一个网络，只要检查到达广州结点的最大流是否等于所有城市的需求流量，并且边$S'{v_i},i = 1,{\rm{2,}} \ldots {\rm{21}}$的剩余容量是否为零即可判断部署方案是否满足要求。
+%我们把所有顶点的本身信息需求量统一引出一条边引到一个虚拟的顶点里作为信息的源头，其余点为中间点，这样就理想化模型化了实际问题，实现了而每个城市原本的信息需求量是刚才虚拟假设的源头连入各个城市的边上流过的信息量，这样对问题并没有任何影响，反而大大简化了分析计算。
+\subsection{深度优先搜索方法的引入和基本概念介绍}
+由文献\cite{liao}，这里将上文用最小生成树算出的最短连接线路作为一个可行的流方案，使用网络最大流算法，把所作的方案标记在图上，即在每条边的权值旁再作一个数字表示在该边上的流量，然后检查在现有的方案基础上能否增加流量；若不能再增加了，则现有方案即为最大流方案；否则，再在原方案基础上再增加流量得一修改方案。接着再检查修改方案能否增加流量。如此继续，直至得到有效的最大流方案为止。
+
+考虑到题中可能的路径规划以及每条路径具体的可能线路配置过多，不能在合理的时间内通过枚举每种组合然后利用网络流算法检验是否可行的方式来解决问题，本文提出基于深度优先搜索（DFS）的网络流改进算法。
+%如 Ford-Fulkerson 算法每
+%次选取增广链时具有任意性,会使计算量变大；Dinic算法在计算过程中必须先计算出剩余网络才能进行增
+%广，步骤比较繁琐。此外，还有许多改进的算法,如Edmonds-Karp 算法，“消链”算法，这些算法如果同时
+%存在长度相同的两条增广链，先选择不同增广链就有可能得到不同的结果，甚至得不出正确的结果。”
+%\subsubsection{DFS算法基本概念介绍}
+
+下面是对DFS算法的基本概念的介绍：
+
+深度优先遍历图的方法是，从图中某顶点出发：
+
+（1）访问顶点v；
+
+（2）依次从v的未被访问的邻接点出发，对图进行深度优先遍历；直至图中和v有路径相通的顶点都被访问；
+
+（3）若此时图中尚有顶点未被访问，则从一个未被访问的顶点出发，重新进行深度优先遍历，直到图中所有顶点均被访问过为止。
+\subsection{基于深度优先搜索优化后的最大流算法分析}
+在上文介绍的网络流算法中，需不断判断源点到汇点的一条可行的流量运输路径（增广路），并将该路径上所有线路的容量更新为线路原容量减去这条路径上的最小容量的结果，然后进行下一次判断，最大流量即为所有循环中流量的加和。
+
+对于每条路径，其可选的容量是三种调制方式的组合，并且可知对某一容量，可选的配置也并不能唯一地确定。如要达到64TB/s的调制容量，可选择两条32TB/s的线路或一条64TB/s的线路。且对于不同长度的路径，其能选择的方案也不尽相同，如长度大于80km的路径无法运用64TB/s的线路。计算好的更新序列见附录中的表格。
+
+1.本文提出在网络流算法中自动增加容量的算法，即对于网络流算法中求出的最大流之和等于所有增广路的容量之和，所以如果到达广州的容量不等于所需容量之和，那么需要增加容量的瓶颈路径必然在增广路上。利用反证法，先假设增加容量的边不在增广路上，则该边所在的路径必然先成为增广路才能使最大流的值增加，那么成为增广路所需的值作为多余的成本投入，必然使更新不在原增广路的路径的成本大于直接更新在原增广路上的路径的成本高。所以可以自然提出一种改进算法，即每次只改进每种路径规划图求出的增广路上剩余容量最小的边，直至最大流的值没有变化，这样即得到了使每种路径规划图可行的成本最小的每条路径的具体配置，接下来比较各种路径规划方案的成本即可。
+
+2.但考虑到所有边都必须有一条线路到达广州市，即必须在增广路上，否则在之后的更新中，其需求仍然得不到满足，则本文提出首先对图进行预处理，即先将一个路径规划图上的配置初始化为最小值，从一个城市出发，深度搜索找到一条可行的抵达广州的路径，并更新路径上容量权值为路径原容量减去路径上最小容量的结果，然后进行下一个城市，因为在不断的更新路径时，必然会形成图上路径容量越来越小，某一城市没有任何一条路径到达广州的情况，则这时更新该城市搜索路径上剩余容量最小的一条路径，直到能顺利找到一条到达广州的通路。因为所有更新都是在成本最小的情况下增加的，那么最终可以将图处理成满足每一个城市都在至少一条增广路上，且成本最小的情况。
+	%结合算法2和算法1，可以得到对西区八种路径规划图，使其成立的每种规划路线各条路径的具体配置及其成本，并从中选出总成本最小的情况和配置如下
+
+%在每种现存状况的配置已经达到最优但出现流量大于容量的情况下，由于最大流算法中无法把该边设置为可行弧，那么此时计算将陷入停滞。引入深度优先搜索后，可以及时发现上述情况，提示这时要加入新的次边作为可行弧来使全局通路。这种自主搜索访问“堵塞边”和城市顶点的算法方便了计算和设计。
+%最关键的地方就是他的“不撞南墙不回头”的搜索顶点方法。
+
+\subsection{价值函数}
+设两个城市之间连接的不同调制格式的信息网络成本为价值函数，其中设每条道路起点终点之间不同调制格式使用个数为${{\rm{y}}_1}$，${{\rm{y}}_2}$，${{\rm{y}}_3}$，
+% Table generated by Excel2LaTeX from sheet 'Sheet2'
+\begin{table}[H]
+  \centering
+  \caption{价值函数示例表}
+    \begin{tabular}{llll}
+    \toprule[2pt]
+    X万元的个数 & 1.25X万元的个数 & 1.5X万元的个数 & 成本（单位：X万元） \\
+    \midrule[1pt]
+    ${{\rm{y}}_1}$ &${{\rm{y}}_2}$&${{\rm{y}}_3}$& cost \\
+    \bottomrule[2pt]
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+所以每条道路上的价值函数（单位：X万元）表达式为：
+\begin{equation}\label{j}
+  {\rm{cost(x) = x}}{{\rm{y}}_1} + 1.25x{{\rm{y}}_2} + 1.5x{{\rm{y}}_3}
+\end{equation}
+
+最终对所有道路上的成本进行求和即可得不同骨干网部署设计方案，它的总的价值（单位：X万元）：
+\begin{equation}\label{j2}
+ \sum {{\rm{cost(x)}}} {\rm{ = }}\sum {{\rm{[x}}{{\rm{y}}_1} + 1.25x{{\rm{y}}_2} + 1.5x{{\rm{y}}_3}]}
+\end{equation}
+
+经过基于深度优先搜索优化后的最大流算法，首先寻找了西区网络价值最大化的部署方案如下：
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[height=8cm]{zuolast}\\
+  \caption{西区的最优配置方案图}\label{zuolast}
+\end{figure}
+% Table generated by Excel2LaTeX from sheet 'Sheet2'
+\begin{table}[H]
+  \centering
+  \caption{西区的最优配置方案图}
+    \begin{tabular}{rrrrrr}
+    \toprule[2pt]
+    \multicolumn{1}{l}{道路起点} & \multicolumn{1}{l}{道路终点} & \multicolumn{1}{l}{X 万元的个数} & \multicolumn{1}{l}{1.25X万元的个数} & \multicolumn{1}{l}{1.5X万元的个数} & \multicolumn{1}{l}{成本（单位：X万元）} \\
+    \midrule[1pt]
+    7     & 6     & 0     & 1     & 1     & 2.75 \\
+    6     & 14    & 7     & 0     & 0     & 7 \\
+    14    & 20    & 0     & 0     & 1     & 1.5 \\
+    20    & 11    & 0     & 0     & 1     & 1.5 \\
+    11    & 13    & 0     & 2     & 0     & 2.5 \\
+    15    & 13    & 0     & 1     & 0     & 1.25 \\
+    13    & 2     & 0     & 0     & 3     & 4.5 \\
+    9     & 2     & 0     & 2     & 3     & 7 \\
+    2     & 1     & 0     & 0     & 11    & 16.5 \\
+    14    & 9     & 7     & 0     & 0     & 7 \\
+    \bottomrule[2pt]
+    \end{tabular}%
+  \label{3bz}%
+\end{table}%
+
+经过上述计算，最终得到了21个城市骨干网的建设部署方案如下图\ref{donglast}，总的成本为51.5X 万元。
+
+同理，广东省东半区也可以经过上述和西半区一样的过程：找出可行9条次边，可以把他们加入到最初最小生成树算法生成的图里，所以东半区的次边线路一共有${{\rm{2}}^{\rm{9}}}{\rm{ = 512}}$ 种情况，基于深搜优化后的最大流算法计算出的东区最优配置方案图和具体线路配置格式成本表见下：
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[height=8cm]{donglast}\\
+  \caption{东区的最优配置方案图}\label{donglast}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{东区的最优配置方案表}
+    \begin{tabular}{rrrrrr}
+    \toprule[2.5pt]
+    \multicolumn{1}{l}{道路起点} & \multicolumn{1}{l}{道路终点} & \multicolumn{1}{l}{X 万元的个数} & \multicolumn{1}{l}{1.25X万元的个数} & \multicolumn{1}{l}{1.5X万元的个数} & \multicolumn{1}{l}{成本（单位：X万元）} \\
+    \midrule[1pt]
+    10    & 17    & 0     & 1     & 0     & 1.25 \\
+    17    & 12    & 0     & 1     & 0     & 1.25 \\
+    12    & 16    & 0     & 1     & 2     & 4.25 \\
+    16    & 19    & 7     & 0     & 0     & 7 \\
+    19    & 18    & 1     & 0     & 0     & 1 \\
+    18    & 4     & 0     & 1     & 0     & 1.25 \\
+    4     & 0     & 1     & 1     & 0     & 2.25 \\
+    0     & 3     & 0     & 0     & 15    & 22.5 \\
+    3     & 8     & 1     & 0     & 0     & 1 \\
+    8     & 5     & 1     & 1     & 0     & 2.25 \\
+    5     & 1     & 0     & 2     & 2     & 5.5 \\
+    1     & 2     & 1     & 0     & 0     & 1 \\
+    3     & 1     & 0     & 0     & 17    & 25.5 \\
+    19    & 0     & 8     & 0     & 0     & 8 \\
+    10    & 12    & 0     & 1     & 1     & 2.75 \\
+    \bottomrule[2.5pt]
+    \end{tabular}%
+  \label{3by}%
+\end{table}%
+该方案使用价值函数计算后使东区骨干网部署设计成本最低，为86.75X万元。
+
+
+%\begin{figure}[H]
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[scale=0.5]{donglast}\\
+%  \caption{21个行政城市按照地理位置分为东西两个大区}\label{donglast}
+%\end{figure}
+
+%\begin{figure}[H]
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[scale=0.5]{dongcibian}\\
+%  \caption{21个行政城市按照地理位置分为东西两个大区}\label{dongcibian}
+%\end{figure}
+经过上述计算，我们最终得到了21个城市骨干网的建设部署方案如下图\ref{3last}，总的成本为138.25X 万元，具体21个城市之间骨干网部署见上述东西两区部署设计表格\ref{3bz}和\ref{3by}：
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[height=8cm]{3last}\\
+  \caption{21个行政城市骨干网部署方案}\label{3last}
+\end{figure}
+\section{骨干网问题4}
+\subsection{模型优化修正}
+“由于每个人的接入价值是不一样的，不同收入、地区、年龄的人接入成本和数据需求都不一样。如果将不同人群的网络接入价值也纳入考虑，并选择性的接入网络价值大的人群”。参考了
+\cite{2018bao}\cite{__2018}等大量数据，得出网络接入价值大的人群所在城市具有如下特点：网民学历中初中学历占比很大，年龄20-40 岁人数较多，城市内有较多数目的大型的网络通信企业或高新技术企业，人均收入较高。那么具有上述特点的城市将被列入重点的信息需求量大且接入网络价值也很大的人群聚集城市。
+%\begin{figure}[H]
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[scale=0.5]{age}\\
+%  %\caption{}
+%  \label{age}
+%\end{figure}
+%\begin{figure}[H]
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[scale=0.5]{edu}\\
+%  %\caption{}
+%  \label{edu}
+%\end{figure}
+%\begin{figure}[H]
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[scale=0.5]{pro}\\
+%  %\caption{}
+%  \label{pro}
+%\end{figure}
+%\begin{figure}[H]
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[scale=0.5]{wage}\\
+%  %\caption{}
+%  \label{wage}
+%\end{figure}
+\begin{figure}[H]
+\centering
+\subfigure[]{
+\includegraphics[width=7cm,height=5.5cm]{edu}
+%\caption{fig1}
+}
+\quad
+\subfigure[]{
+\includegraphics[width=7cm,height=5.5cm]{age}
+}
+\end{figure}
+\begin{figure}[H]
+\centering
+\subfigure[]{
+\includegraphics[width=7cm,height=5.5cm]{pro}
+}
+\quad
+\subfigure[]{
+\includegraphics[width=7cm,height=5.5cm]{wage}
+}
+\end{figure}
+
+现在依照上述结论，把接入成本和数据需求纳入考量范围。可以想到一个城市，如果它的人群构成中有较高学历的学生比例很大、高等教育普及度很好、优秀大学数量很多、高新技术企业和电信业务吞吐量大的企业扎堆、中青年人口占比很大，当它的上述特点非常突出，也就是相应的该城市的数据需求量更多，接入价值更大，对于高质量高速度调制格式的传输线路的需求也更迫切、更满足他们的使用情况，那么高质量高速度调制格式的传输线路的标准成本也应予以一定的降低。
+\subsection{基于熵权法的折减成本后的价值函数}
+依照上文提到的2028 年预估的广东省21 个城市信息需求量表格\ref{biao}，并查阅了21个城市的大学生数量、大学个数、人口年龄构成、城市GDP、高新技术企业数目（参考\cite{ju}，\cite{co}) ，把上述5 个指标和一开始计算过的信息需求量一共6个指标重新使用熵权法设置权重分析统计，给每个城市的不同调制格式的线路的成本从原先的X万元，1.25X万元，1.5X万元乘以了折减系数，最终得到了如下表\ref{b}所示的新的折减后的成本，另外对每条道路上的价值函数（单位：X万元）表达式做相应变化为：
+\begin{equation}\label{j}
+  {\rm{cost(x) = x}}{{\rm{y}}_1} + 1.25x{\eta _1}{{\rm{y}}_2} + 1.5x{\eta _2}{{\rm{y}}_3}
+\end{equation}
+不同城市的折减系数不同，其中${\eta _1}$，${\eta _2}$为标准成本1.25X、1.5X（单位：万元）的折减系数，对于成本为X 万元的线路，折减系数为1，也即接入价值大的人群对低速调制格式线路需求并不大，它的实际成本降低的并不明显，可忽略不计。成本的求解方法与骨干网问题1 相同，这里不多赘述。
+最终对所有道路上的成本进行求和，即可得各种新的骨干网部署设计方案它的总的价值（单位：X 万元）：
+\begin{equation}\label{j2}
+ \sum {{\rm{cost(x)}}} {\rm{ = }}\sum {{\rm{[x}}{{\rm{y}}_1} + 1.25x{\eta _1}{{\rm{y}}_2} + 1.5x{\eta _2}{{\rm{y}}_3}]}
+\end{equation}
+% Table generated by Excel2LaTeX from sheet 'Sheet3'
+\begin{table}[H]
+  \centering
+  \caption{经过折减后的考虑了接入价值的新的成本}
+    \begin{tabular}{lrrr}
+    \toprule[2pt]
+    城市    & \multicolumn{1}{l}{1.5（X万元）} & \multicolumn{1}{l}{1.25（X万元）} & \multicolumn{1}{l}{1（X万元）} \\
+    \midrule[1pt]
+    深圳    & 0.81  & 0.90  & 1 \\
+    广州    & 0.98  & 1.09  & 1 \\
+    佛山    & 1.01  & 1.12  & 1 \\
+    东莞    & 1.07  & 1.18  & 1 \\
+    惠州    & 1.11  & 1.23  & 1 \\
+    中山    & 1.06  & 1.18  & 1 \\
+    茂名    & 1.50  & 1.25  & 1 \\
+    湛江    & 1.50  & 1.25  & 1 \\
+    珠海    & 1.50  & 1.25  & 1 \\
+    江门    & 1.50  & 1.25  & 1 \\
+    汕头    & 1.50  & 1.25  & 1 \\
+    肇庆    & 1.50  & 1.25  & 1 \\
+    揭阳    & 1.50  & 1.25  & 1 \\
+    清远    & 1.50  & 1.25  & 1 \\
+    阳江    & 1.50  & 1.25  & 1 \\
+    韶光    & 1.50  & 1.25  & 1 \\
+    梅州    & 1.50  & 1.25  & 1 \\
+    潮州    & 1.50  & 1.25  & 1 \\
+    河源    & 1.50  & 1.25  & 1 \\
+    汕尾    & 1.50  & 1.25  & 1 \\
+    云浮    & 1.50  & 1.25  & 1 \\
+    \bottomrule[2pt]
+    \end{tabular}%
+  \label{b}%
+\end{table}%
+
+使用不同调制格式线路求得的新的成本，仍采用基于深搜的最大流算法，重复第三问中步骤，先计算西半区最佳配置图和配置方案，其中配置的连线图和第三问图\ref{zuolast}一样，具体线路配置图和实际折减后的成本如下表：
+\begin{table}[H]
+  \centering
+  \caption{西区的最优配置方案表}
+    \begin{tabular}{rrrrrr}
+    \toprule[2.5pt]
+    \multicolumn{1}{l}{道路起点} & \multicolumn{1}{l}{道路终点} & \multicolumn{1}{l}{${{{\rm{y}}_1}}$}数目 & \multicolumn{1}{l}{${{{\rm{y}}_2}}$数目} & \multicolumn{1}{l}{${{{\rm{y}}_3}}$数目} & \multicolumn{1}{l}{成本（单位：X 万元）} \\
+    \midrule[1pt]
+    7     & 6     & 0     & 1     & 1     & 2.75 \\
+    6     & 14    & 7     & 0     & 0     & 7 \\
+    14    & 20    & 0     & 0     & 1     & 1.5 \\
+    20    & 11    & 0     & 0     & 1     & 1.5 \\
+    11    & 13    & 0     & 2     & 0     & 2.5 \\
+    15    & 13    & 0     & 1     & 0     & 1.25 \\
+    13    & 2     & 0     & 0     & 3     & 4.5 \\
+    9     & 2     & 0     & 2     & 3     & 7 \\
+    2     & 1     & 0     & 0     & 11    & 11.11 \\
+    14    & 9     & 7     & 0     & 0     & 7 \\
+    \bottomrule[2.5pt]
+    \end{tabular}%
+  \label{4bz}%
+\end{table}%
+
+该方案使用价值函数计算后使西区骨干网部署设计成本最低，为46.11X万元。
+
+再计算东半区最佳配置图和配置方案，具体线路配置图和实际折减后的成本如下表：
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{4you}\\
+  \caption{东区的最优配置方案图}\label{4you}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{东区的最优配置方案表}
+    \begin{tabular}{rrrrrr}
+    \toprule[2.5pt]
+    \multicolumn{1}{l}{道路起点} & \multicolumn{1}{l}{道路终点} & \multicolumn{1}{l}{${{{\rm{y}}_1}}$}数目 & \multicolumn{1}{l}{${{{\rm{y}}_2}}$数目} & \multicolumn{1}{l}{${{{\rm{y}}_3}}$数目} & \multicolumn{1}{l}{成本（单位：X 万元）} \\
+    \midrule[1pt]
+    10    & 17    & 0     & 1     & 0     & 1.25 \\
+    17    & 12    & 0     & 1     & 0     & 1.25 \\
+    12    & 16    & 0     & 1     & 2     & 4.25 \\
+    16    & 19    & 7     & 0     & 0     & 7 \\
+    19    & 18    & 1     & 0     & 0     & 1 \\
+    18    & 4     & 0     & 1     & 0     & 1.25 \\
+    4     & 0     & 1     & 1     & 0     & 2.23 \\
+    0     & 3     & 0     & 0     & 15    & 12.15 \\
+    3     & 8     & 1     & 0     & 0     & 1 \\
+    8     & 5     & 1     & 1     & 0     & 2.25 \\
+    5     & 1     & 1     & 0     & 3     & 4.18 \\
+    1     & 2     & 1     & 0     & 0     & 1 \\
+    3     & 1     & 0     & 0     & 17    & 18.19 \\
+    19    & 0     & 8     & 0     & 0     & 8 \\
+    10    & 12    & 0     & 1     & 1     & 2.75 \\
+    \bottomrule[2.5pt]
+    \end{tabular}%
+  \label{4by}%
+\end{table}%
+
+该方案使用新的价值函数计算后使西区骨干网部署设计成本最低，为67.75X万元。
+
+经过上述计算，即将不同人群的网络接入价值也纳入考虑，并选择性的接入一些网络价值大的人群，最终得到了21个城市骨干网的建设部署方案如下图\ref{4last}，总的成本为113.86X 万元，具体部署方案见上述西东两区配置方案表格\ref{4bz}和\ref{4by}：
+\begin{figure}[H]
+  \centering
+  % Requires \usepackage{graphicx}
+  \includegraphics[scale=0.5]{4last}\\
+  \caption{21个行政城市骨干网部署方案}\label{4last}
+\end{figure}
+\section{模型的评价}
+\begin{itemize}
+  \item 缺点
+
+   1.微波问题1考虑了两个观测点的要求，没有过多处理辐射区域的的均匀性，以及较少关注单元的关闭通道数，无法更完美的满足工程实际中关闭尽可能多的通道降低配置成本的要求。
+
+   2.骨干网问题1，在利用熵权法处理各项指标时，由于收集到的相关可用指标较少，使得各个城市的综合评分与实际评分有一定的差距，从而使得模型预测值有一定误差。
+
+   3.骨干网问题1中的人口增长模型是通过数据拟合而成，缺乏更客观全面的分析，比如生育政策的改变，经济发展水平的影响，受教育人口分布等未来未知因素的影响，从而使得计算的信息总量有一定误差。
+
+    4.骨干网问题1中人均信息量增长模型是通过数据拟合而成，没有将新技术爆炸，经济发展水平，受教育程度等影响引入，从而使得预测的信息总量有误差。
+  \item 优点
+
+  1.灵活且合适地使用多种算法：遗传算法、最小生成树Kruskal算法、基于深度优先搜索优化后的最大流算法。
+
+\quad \quad  其中，遗传算法通过动态随机生成初始化种群并反复迭代，结合适应度函数，两个天线单元中是否有关闭的算例表明该算法取得了很好的效果。
+
+\quad \quad   最小生成树Kruskal 算法通过寻找图的最小生成树初步优化网络，为后续的细致优化提供一个可行的初始解的大体城市连接，而且它不依赖于网络的初始结构，具有更好的适用性。
+
+\quad \quad   基于深度优先搜索优化后的最大流算法，巧妙地使用了DFS搜索，排除所有不符合条件的顶点 对，使可以调整流量的简单路径数目达到最少，从而大大优化算法的执行效率。
+
+
+  2.结合大学专业课上的分析波的合成问题的方法：针对微波问题，我们从32个单元功率和相位合成入手，利用复数可以简化矢量叠加运算的特点和《微波原理》、《电磁场和电磁波》、《天线原理》课本上的知识将该问题大大简化；在求解微波问题1 的时候使用了结构优化设计的方法，迅速简化了问题，避免了从${5^{32}}$ 天文数字的32 个天线单元不同配置的排列组合中分析，大大提高了效率，缩短了求解时间，而且还很好地运用专业课所学，将书本理论很好地与实际问题结合起来。
+
+  3.搜索收集并合理处理分析了大量国家各部门官网上的与信息、通信、网络、人口等等有利于骨干网问题求解的数据。在骨干网问题1中，使用对实际数值拟合度很高的熵权法设置不同指标的权重值，避免了其他分析指标权重值方法往往主观性过强，客观性不够的缺点，使结果可信度较高。数据来源真实，处理过程客观合理，有良好的借鉴意义。
+\end{itemize}
+
+
+\nocite{*}
+
+
+
+
+
+%\end{appendices}
+\end{spacing}
+\normalem
+\bibliography{re1}
+
+
+
+
+
+\end{document}
